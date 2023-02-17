@@ -1,0 +1,451 @@
+<!DOCTYPE = html>
+    <head>
+        <title>sudoku player</title>
+        <style>
+            /* table{
+                margin-left:30%;
+            } */
+            td{
+                width:50px;
+                height:50px;
+                border:1px solid  #000;
+            }
+            input{
+                font-size:40px;
+                height:50px;
+                width:50px;
+                border:none;
+                
+                background-color: #00fffbfb;
+                text-align:center;
+            }
+            .box-4{
+                border-top:none;
+            }
+            /* .row-1 td{
+                border-top:5px solonchange = "myfunction()" id black;
+            }
+            .row-9 td{
+                border-bottom:5px solonchange = "myfunction()" id black;
+            }
+
+            td:first-child{
+                border-left:5px solonchange = "myfunction()" id black;
+            }
+            
+            td:last-child{
+                border-right:5px solonchange = "myfunction()" id black;
+            } */
+        </style>
+        <!-- <script href="script.js"></script> -->
+    </head>
+
+    <body onload="myfunction()">
+        <table >
+            <tr>
+                <td>
+                <table class="box-1">
+                    <tr class="row-1">
+                        <td>
+                            <input type="number" max="9" min="1" onchange = "myfunction()" id="1" for="1,1" value="1" >
+                        </td>
+                    
+                        <td>
+                            <input type="number" max="9" min="1" onchange = "myfunction()" id="2" for="1,2"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" onchange = "myfunction()" id="3" for="1,3" value="2"/>
+                        </td>
+                    </tr>
+                    <tr class="row-2">
+                        <td>
+                            <input type="number" max="9" min="1" onchange = "myfunction()" id="4" for="2,1"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" onchange = "myfunction()" id="5" for="2,2"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" onchange = "myfunction()" id="6" for="2,3" value="9"/>
+                        </td>
+                    </tr>
+                    <tr class="row-3">
+                        <td>
+                            <input type="number" max="9" min="1" onchange = "myfunction()" id="7" for="3,1" value="8"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" onchange = "myfunction()" id="8" for="3,2" value="6"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" onchange = "myfunction()" id="9" onchange = "myfunction()" for="3,3" value="9"/>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td>
+                <table class="box-2">
+                    <tr class="row-1">
+                        <td>
+                            <input type="number" max="9" min="1" for="1,4" value="8"/>
+                        </td>
+
+                        <td>
+                            <input type="number" max="9" min="1" for="1,5"/>
+                        </td>
+
+                        <td>
+                            <input type="number" max="9" min="1" for="1,6" value="9"/>
+                        </td>
+                    </tr>
+                    <tr class="row-2">
+                        <td>
+                            <input type="number" max="9" min="1" for="2,4"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" for="2,5"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" for="2,6" value="5"/>
+                    </tr>
+                    <tr class="row-3">
+                        <td>
+                            <input type="number" max="9" min="1" for="3,4"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" for="3,5"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" for="3,6"/>
+                        </td>
+                    </tr>
+                </table>
+                </td>
+                <td>
+                    <table class="box-3">
+                        <tr class="row-1">
+                            <td>
+                                <input type="number" max="9" min="1" for="1,7" value="4"/>
+                            </td>
+                        
+                            <td>
+                                <input type="number" max="9" min="1" for="1,8"/>
+                            </td>
+                        
+                            <td>
+                                <input type="number" max="9" min="1" for="1,9"/>
+                            </td>
+                        </tr>
+                        <tr class="row-2">
+                            <td>
+                                 <input type="number" max="9" min="1" for="2,7"/>
+                             </td>
+             
+                             <td>
+                                 <input type="number" max="9" min="1" for="2,8"/>
+                             </td>
+                             
+                             <td>
+                                 <input type="number" max="9" min="1" for="2,9" value="6"/>
+                             </td>
+                         </tr>
+                         <tr class="row-3">
+                            <td>
+                                <input type="number" max="9" min="1" for="3,7"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="3,8" value="2"/>
+                            </td>
+                            
+                            <td>
+                                <input type="number" max="9" min="1" for="3,9"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    <table class="box-4">
+                        <tr class="row-4">
+                            <td>
+                                <input type="number" max="9" min="1" for="4,1"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="4,2" value="7"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="4,3" value="8"/>
+                            </td>
+                        </tr>
+                        <tr class="row-5">
+                            <td>
+                                <input type="number" max="9" min="1" for="5,1"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="5,2" value="9"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="5,3" />
+                            </td>
+                        </tr>
+                        <tr class="row-5">
+                            <td>
+                                <input type="number" max="9" min="1" for="6,1" value="2"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="6,2" onchange = "myfunction()" id="6,2" value="1"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="6,3" value="3"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="box-5">
+                        <tr class="row-4">
+                        <td>
+                            <input type="number" max="9" min="1" for="4,4" value="5"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" for="4,5"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" for="4,6" value="2"/>
+                        </td>
+                    </tr>
+                    <tr class="row-5">
+                        <td>
+                            <input type="number" max="9" min="1" for="5,4"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" for="5,5" value="7"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" for="5,6" value="8"/>
+                        </td>
+                    </tr>
+                    <tr class="row-6">
+                        <td>
+                            <input type="number" max="9" min="1" for="6,4" value="9"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" for="6,5"/>
+                        </td>
+        
+                        <td>
+                            <input type="number" max="9" min="1" for="6,6" value="6"/>
+                        </td>
+                    </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="box-6">
+                        <tr class="row-4">
+                            <td>
+                                <input type="number" max="9" min="1" for="4,7" value="6"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="4,8"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="4,9" value="9"/>
+                            </td>
+                        </tr>
+                        <tr class="row-5">
+                            <td>
+                                <input type="number" max="9" min="1" for="5,7"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="5,8"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="5,9"/>
+                            </td>
+                        </tr>
+                        <tr class="row-6">
+                            <td>
+                                <input type="number" max="9" min="1" for="6,7" value="7"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="6,8"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="6,9" value="8"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>                
+            </tr>
+
+            <tr>
+                <td>
+                    <table class="box-7">
+                        <tr class="row-7">
+                            <td>
+                                <input type="number" max="9" min="1" for="7,1"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="7,2" value="8"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="7,3" value="4"/>
+                            </td>
+                        </tr>
+                        <tr class="row-8">
+                            <td>
+                                <input type="number" max="9" min="1" for="8,1" value="6"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="8,2" />
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="8,3"/>
+                            </td>
+                        </tr>
+                        <tr class="row-9">
+                            <td>
+                                <input type="number" max="9" min="1" for="9,1" value="9"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="9,2"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="9,3"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                <td>
+                    <table class="box-8">
+                        <tr class="row-7">
+                            <td>
+                                <input type="number" max="9" min="1" for="7,4"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="7,5"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="7,6"/>
+                            </td>
+                        </tr>
+                        <tr class="row-8">
+                            <td>
+                                <input type="number" max="9" min="1" for="8,4"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="8,5"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="8,6"/>
+                            </td>
+                        </tr>
+                        <tr class="row-9">
+                            <td>
+                                <input type="number" max="9" min="1" for="9,4"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="9,5" value="8"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="9,6" value="7"/>
+                            </td>
+                        </tr>
+                    </table>
+                <td>
+                    <table class="box-9">
+                        <tr class="row-7">
+                            <td>
+                                <input type="number" max="9" min="1" for="7,7"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="7,8"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="7,9"/>
+                            </td>
+                        </tr>
+                        <tr class="row-8">
+                            <td>
+                                <input type="number" max="9" min="1" for="8,7"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="8,8" value="9"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="8,9" value="7"/>
+                            </td>
+                        </tr>
+                        <tr class="row-9">
+                            <td>
+                                <input type="number" max="9" min="1" for="9,7" value="3"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="9,8"/>
+                            </td>
+            
+                            <td>
+                                <input type="number" max="9" min="1" for="9,9" value="1"/>
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+                
+            <tr>
+    </body>
+    <script src="script.js">
+        // for(let i=1; i<=9; i++){
+        //     var s = "row-"
+        //     s+=i
+        //     console.log(s)
+        //     let e = document.getElementsByClassName(s)
+        //     for(let j=i; j<=9; j++){
+                
+        //     }
+        // }
+    </script>
+</html>
